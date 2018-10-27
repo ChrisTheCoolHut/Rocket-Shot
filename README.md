@@ -2,7 +2,7 @@
 
 Backwards program slice stitching for automatic CTF problem solving.
 
-Rocket Shot uses [angr](https://github.com/angr/angr) to concolically analyze basic blocks in a given program, running from the start of the block to the end, looking for interactions with a file descriptor. When reaching that condition, the node's predessor's are "stitched" into the exploration path and then n-predessor based paths are explored attempting to reveal more modified file descriptor contents. This process continually iterates until terminated with Ctrl+C.
+Rocket Shot uses [angr](https://github.com/angr/angr) to concolically analyze basic blocks in a given program, running from the start of the block to the end, looking for interactions with a file descriptor. When reaching that condition, the basic block's control flow graph predessor's are "stitched" into the exploration path and then n-predessor based paths are explored attempting to reveal more modified file descriptor contents. This process continually iterates until terminated with Ctrl+C.
 
 This technique is inspired in part by angr's [Backward Slice analyzer](https://docs.angr.io/built-in-analyses/backward_slice). 
 
