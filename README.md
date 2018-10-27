@@ -8,6 +8,8 @@ This technique is inspired in part by angr's [Backward Slice analyzer](https://d
 
 [![asciicast](https://asciinema.org/a/208750.png)](https://asciinema.org/a/208750)
 
+Slides for the BSidesDC presentation of this tool can be found [here](https://drive.google.com/open?id=15WCMFPGzqbw346a5PKauAZh6cu2efpUG)
+
 ## Installing
 Rocket Shot has been tested on Ubuntu 16.04 and the install script is setup for Ubuntu 12.04 to Ubuntu 18.04
 
