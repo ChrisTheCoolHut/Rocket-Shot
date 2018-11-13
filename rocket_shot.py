@@ -178,7 +178,7 @@ def get_predecessors(nodes_list):
                 return_addresses[predecessor.addr] = node_list[0].addr
             '''
 
-            path_stitch = node_list.copy()
+            path_stitch = list(node_list)
             path_stitch.insert(0,predecessor)
 
             return_list.append(path_stitch)
@@ -504,7 +504,8 @@ def main():
                     remove_indexes.append(item_index)
 
         for item_index in remove_indexes:
-            nodes_list.remove(nodes_list[item_index])
+            if item_index < len(nodes_list): #What a terrible fix -- Sorry
+                nodes_list.remove(nodes_list[item_index])
 
         try:
             nodes_list,node_output = run_pass(nodes_list, args.timeout, args.string)
