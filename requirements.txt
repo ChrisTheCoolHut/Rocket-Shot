@@ -1,3 +1,5 @@
 angr
 termcolor
 IPython
+tqdm
+celery

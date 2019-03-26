@@ -14,6 +14,11 @@ Slides for the BSidesDC presentation of this tool can be found [here](https://dr
 Rocket Shot has been tested on Ubuntu 16.04 and the install script is setup for Ubuntu 12.04 to Ubuntu 18.04
 
     ./install.sh
+    #Ubuntu
+    sudo apt install rabbitmq
+    #OSX
+    brew install rabbitmq
+
     
 ## Usage
 Rocket Shot is a python script which accepts a binary as an argument with optional basic block timeout settings, and an optional required string match input.
@@ -27,9 +32,15 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --timeout TIMEOUT, -t TIMEOUT
   --string STRING, -s STRING
 ```
+
+## Celery worker
+In one terminal run the celery worker and it will be ready tp accept commands
+```
+celery -A lib.run_pass worker --loglevel=info
+```
+
 ## Examples
 Checkout the samples.sh file. The file contains a small handful of challenges.
 
@@ -37,7 +48,7 @@ Or any of the reverseing based angr example problems at [here](https://github.co
 ```
 #!/bin/bash
 #PicoCTF 2014 Reverseing
-python rocket_shot.py challenges/bitpuzzle -t 15 -s flag
+python rocket_shot.py challenges/bitpuzzle -s flag
 #UMDCTF 2017 Reverseing
-python rocket_shot.py challenges/lockpicksim -t 15 -s Flag
+python rocket_shot.py challenges/lockpicksim -s Flag
 ```
